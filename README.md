@@ -34,3 +34,6 @@ The model was trained using adam optimizer, with a batch size of 178 and for 10 
 
 ## Evaluation Metrics
 The model was evaluated using accuracy as the primary metric, achieving an accuracy of .8484 on the test set.
+
+## Example Usage 
+For using the model to predict tumor for the given images first download the model after that copy the code given the Example usage section. After copying the codes give the path of the jpg image for which prediction needs to be done.
