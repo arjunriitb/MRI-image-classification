@@ -4,7 +4,7 @@
 This project aims to classify MRI images of the brain to predict the presence and type of tumor using Convolutional Neural Networks (CNN). The model is trained on a dataset consisting of 7033 MRI images labeled with tumor types.
 
 ## Dataset Description
-The dataset used for training and testing the model can be found [here](insert link to dataset). It contains 7033 MRI images of the brain along with corresponding labels indicating the presence and type of tumor.
+The dataset used for training and testing the model can be found  from this link https://drive.google.com/drive/u/2/folders/1hOd39qWXrDuFuUOFo0bl2i64VFPdbqz4. It contains 7033 MRI images of the brain along with corresponding labels indicating the presence and type of tumor.
 
 ## Model Architecture
 The CNN model has a total of 10 layers:
@@ -30,7 +30,7 @@ Dropout layer with a dropout rate of 0.5 to reduce overfitting.
 Dense (output) layer with 4 neurons (assuming 4 classes) and softmax activation for classification.
 
 ## Training Procedure
-The model was trained using [insert optimizer], with a batch size of [insert batch size] and for [insert number] epochs. Data augmentation techniques were applied to increase the diversity of the training set.
+The model was trained using adam optimizer, with a batch size of 178 and for 10 epochs.
 
 ## Evaluation Metrics
-The model was evaluated using accuracy as the primary metric, achieving an accuracy of [insert accuracy] on the test set.
+The model was evaluated using accuracy as the primary metric, achieving an accuracy of .8484 on the test set.
