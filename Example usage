@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
+from tensorflow.keras import layers, models
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import img_to_array, load_img
+
+# Function to preprocess a single image
+def preprocess_image(image_path, target_size=(256, 256)):
+    img = load_img(image_path, target_size=target_size)
+    img = img_to_array(img) / 255.0
+    img = np.expand_dims(img, axis=0)
+    return img
+
+# Function to predict tumor type from a single image
+def predict_tumor_type(image_path, model):
+    preprocessed_img = preprocess_image(image_path)
+    prediction = model.predict(preprocessed_img)
+    class_names = ['Glioma', 'Meningioma', 'No Tumor', 'Pituitary Tumor']
+    predicted_class_index = np.argmax(prediction)
+    predicted_class = class_names[predicted_class_index]
+    confidence = prediction[0][predicted_class_index]
+    return predicted_class, confidence
+
+# Load the trained model
+model = models.load_model('path/to/your/model.h5')  # Update with the path to your trained model file
+
+# Example usage:
+image_path = 'path/to/your/image.jpg'  # Update with the path to the user's image
+predicted_class, confidence = predict_tumor_type(image_path, model)
+print("Predicted Tumor Type:", predicted_class)
+print("Confidence:", confidence)
